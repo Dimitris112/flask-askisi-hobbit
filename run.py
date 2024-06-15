@@ -14,3 +14,5 @@ if __name__ == "__main__":
         port=int(os.environ.get("PORT", "5000")),
         debug=True
     )
+# debug=True mono gia to development kommati
+# debug=False otan einai etoimo to project na paradwthei klp - security issue alliws
