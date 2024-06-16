@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>About Page</h2>
+
+
+<h2>{{ page_title }}</h2>
 <p>
     The formation of the group grew out of a meeting Gandalf had with Thorin in Bree which kindled Thorin's interest in
     recapturing his long lost family inheritance. (Thorin's grandfather had been the king of the Lonely Mountain when
@@ -11,193 +13,19 @@
     leave on other business, welcomed a fourteenth to fill into their party.
 </p>
 
+{% for member in company %}
 <div class="row featurette">
     <div class="col-md-7">
-        <h3>Thorin Oakenshield</h3>
+        <h3>{{ member.name }}</h3>
         <p>
-            In the year TA 2746, Thorin II was born to Dwarven prince Thráin II in the mountain city of The Lonely
-            Mountain. Early in his youth, he and the other Dwarves of the Lonely Mountain were forced to flee by the
-            dragon Smaug
-            in TA 2770. While in exile, he quickly grew to become a capable warrior. This was demonstrated when he
-            participated in the Battle of Azanulbizar in TA 2799. He marched with one of the Dwarven armies beneath the
-            East-gate of Moria.
-            At some point in the fighting, his shield broke, and using an oaken tree branch found on the floor as a
-            shield, he gained
-            the epithet "Oakenshield," which would remain with him even in death.
+            {{ member.description }}
         </p>
     </div>
     <div class="col-md-5">
-        <img src="https://vignette.wikia.nocookie.net/lotr/images/3/3f/ThorinBIG.jpg" alt="Thorin Oakenshield">
+        <img src="{{ member.image_source }}" alt="" class="featurette-image image-responsive">
     </div>
 </div>
+<hr class="featurette-divider">
 
-<div class="row featurette">
-    <div class="col-md-5">
-        <img src="https://vignette.wikia.nocookie.net/lotr/images/b/b4/The-Hobbit-Fili-and-Kili.jpg"
-            alt="Fili and Kili">
-    </div>
-    <div class="col-md-7">
-        <h3>Fili and Kili</h3>
-        <p>
-            Fíli and Kíli were nephews of Thorin, who was the elder brother of their mother Dís. They were also nephews
-            of Frerin, grandsons of Thráin II, and great-grandsons of Thrór. Fíli's most distinguishing feature was his
-            long nose, the longest of any of the Dwarves in Thorin's company.
-        </p>
-    </div>
-</div>
-
-<div class="row featurette">
-    <div class="col-md-7">
-        <h3>Óin</h3>
-        <p>
-            Óin, born in TA 2774, was a member of Thorin's company and the elder brother of Glóin. Known for his skill
-            in fire-making, Óin was a distant cousin of Thorin. He accompanied the company on the quest to reclaim
-            Erebor and played a role in scouting and providing counsel to Thorin.
-        </p>
-    </div>
-    <div class="col-md-5">
-        <img src="https://vignette.wikia.nocookie.net/lotr/images/a/a2/Oin.jpg" alt="Óin">
-    </div>
-</div>
-
-<div class="row featurette">
-    <div class="col-md-5">
-        <img src="https://vignette.wikia.nocookie.net/lotr/images/7/7a/Gloin.jpg" alt="Glóin">
-    </div>
-    <div class="col-md-7">
-        <h3>Gloin</h3>
-        <p>
-            Glóin, born in TA 2783, was a skilled warrior and the father of Gimli, one of the members of the Fellowship
-            of the Ring. Glóin was known for his fiery temper and was one of Thorin's staunch supporters. He played a
-            key role in the Battle of Five Armies and later attended the Council of Elrond in Rivendell.
-        </p>
-    </div>
-</div>
-
-<div class="row featurette">
-    <div class="col-md-7">
-        <h3>Balin</h3>
-        <p>
-            Balin, son of Fundin, was born in TA 2763 and was one of Thorin's closest companions. Known for his wisdom
-            and leadership, Balin played a significant role in the quest for Erebor. After the success of the quest, he
-            later led an expedition to reclaim Moria but unfortunately met his end there.
-        </p>
-    </div>
-    <div class="col-md-5">
-        <img src="https://vignette.wikia.nocookie.net/lotr/images/c/cc/Balin.jpg" alt="Balin">
-    </div>
-</div>
-
-<div class="row featurette">
-    <div class="col-md-5">
-        <img src="https://vignette.wikia.nocookie.net/lotr/images/7/75/Dwalin.jpg" alt="Dwalin">
-    </div>
-    <div class="col-md-7">
-        <h3>Dwalin</h3>
-        <p>
-            Dwalin, born in TA 2772, was Balin's younger brother. A formidable warrior, Dwalin was known for his loyalty
-            and bravery. He played a crucial role in the Battle of Five Armies and was known for his distinctive blue
-            beard and tattoos.
-        </p>
-    </div>
-</div>
-
-<div class="row featurette">
-    <div class="col-md-7">
-        <h3>Ori</h3>
-        <p>
-            Ori, born in TA 2870, was one of the youngest members of Thorin's company. Known for his skill in writing
-            and chronicling, Ori documented much of the journey to Erebor. He met his fate in Moria alongside Balin
-            during their ill-fated attempt to reclaim the ancient Dwarven kingdom.
-        </p>
-    </div>
-    <div class="col-md-5">
-        <img src="https://vignette.wikia.nocookie.net/lotr/images/3/35/Ori.jpg" alt="Ori">
-    </div>
-</div>
-
-<div class="row featurette">
-    <div class="col-md-5">
-        <img src="https://vignette.wikia.nocookie.net/lotr/images/7/7b/Dori.jpg" alt="Dori">
-    </div>
-    <div class="col-md-7">
-        <h3>Dori</h3>
-        <p>
-            Dori, born in TA 2760, was known for his strength and his role as the protector of the company. He often
-            looked out for Bilbo during their journey and was instrumental in saving him from several dangerous
-            situations. Dori was also known for his deep loyalty to Thorin.
-        </p>
-    </div>
-</div>
-
-<div class="row featurette">
-    <div class="col-md-7">
-        <h3>Nori</h3>
-        <p>
-            Nori, born in TA 2760, was Dori's brother and a member of Thorin's company. Known for his skills as a thief
-            and his cunning nature, Nori played a significant role in scouting and gathering information during the
-            quest to reclaim Erebor.
-        </p>
-    </div>
-    <div class="col-md-5">
-        <img src="https://vignette.wikia.nocookie.net/lotr/images/1/10/Nori.jpg" alt="Nori">
-    </div>
-</div>
-
-<div class="row featurette">
-    <div class="col-md-5">
-        <img src="https://vignette.wikia.nocookie.net/lotr/images/7/72/Bifur.jpg" alt="Bifur">
-    </div>
-    <div class="col-md-7">
-        <h3>Bifur</h3>
-        <p>
-            Bifur, born in TA 2764, was known for the axe embedded in his forehead, a remnant of an old battle injury.
-            Despite this, he was a capable warrior and played an important role in the quest for Erebor. Bifur's
-            resilience and determination were admired by his companions.
-        </p>
-    </div>
-</div>
-
-<div class="row featurette">
-    <div class="col-md-7">
-        <h3>Bofur</h3>
-        <p>
-            Bofur, born in TA 2764, was Bifur's cousin and known for his cheerful and optimistic nature. He was a
-            talented toymaker and often lifted the spirits of the company with his humor. Bofur was also brave and
-            loyal, standing by Thorin's side throughout their journey.
-        </p>
-    </div>
-    <div class="col-md-5">
-        <img src="https://vignette.wikia.nocookie.net/lotr/images/f/f1/Bofur.jpg" alt="Bofur">
-    </div>
-</div>
-
-<div class="row featurette">
-    <div class="col-md-5">
-        <img src="https://vignette.wikia.nocookie.net/lotr/images/4/4a/Bombur.jpg" alt="Bombur">
-    </div>
-    <div class="col-md-7">
-        <h3>Bombur</h3>
-        <p>
-            Bombur, born in TA 2763, was the cousin of Bofur and Bifur. He was the heaviest and most rotund member of
-            Thorin's company, often struggling with physical challenges due to his size. Despite this, Bombur's
-            resilience and good nature made him a valued member of the group.
-        </p>
-    </div>
-</div>
-
-<div class="row featurette">
-    <div class="col-md-7">
-        <h3>Gandalf</h3>
-        <p>
-            Gandalf, also known as Mithrandir, was a Maia sent by the Valar to aid the peoples of Middle-earth. Known
-            for his wisdom, power, and kindness, Gandalf played a crucial role in the quest to reclaim Erebor by
-            bringing Bilbo Baggins into Thorin's company. His guidance and interventions were instrumental in the
-            success of their mission.
-        </p>
-    </div>
-    <div class="col-md-5">
-        <img src="https://vignette.wikia.nocookie.net/lotr/images/d/d4/Gandalf_the_Grey.jpg" alt="Gandalf">
-    </div>
-</div>
+{% endfor %}
 {% endblock %}
